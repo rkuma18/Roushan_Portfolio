@@ -1,5 +1,7 @@
 import { Inter, Bebas_Neue } from "next/font/google";
+import { Analytics } from '@vercel/analytics/next';
 import "./globals.css";
+
 
 const inter = Inter({
   weight: ["100", "200", "400", "500", "600", "700", "800", "900"],
@@ -29,6 +31,7 @@ export default function RootLayout({ children }) {
         suppressHydrationWarning={true}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
