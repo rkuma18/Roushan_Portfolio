@@ -15,7 +15,10 @@ const bebasNeue = Bebas_Neue({
 
 export const metadata = {
   title: "Roushan Kumar",
-  description: "Created By Roushan Kumar",
+  description: "You are exploring Roushan's world of insights, travel, and tech.",
+  icons: {
+    icon: 'favicon.ico'
+  }
 };
 
 export default function RootLayout({ children }) {
