@@ -18,7 +18,7 @@ const journey = [
         position: "Manager",
         duration: "Apr 2023 - Feb 2025",
         description:
-            "I built predictive models to forecast demand and optimize inventory, boosting weekly sales by 6% and cutting stock shortages by 60%, while performance analysis improved operational efficiency by 22%."
+            "Worked on sales, stock, and P&L data using Python. Built forecasts to plan rotas and stock better. Helped reduce waste and raise profit margins by 10%."
     },
     {
         type: "experience",
@@ -45,7 +45,7 @@ const journey = [
         position: "Data Analyst",
         duration: "July 2019 - Jul 2021",
         description:
-            "I built cloud-based ML solutions that cut billing errors by 15% and boosted customer engagement by 8%, using predictive analytics and recommendation systems to enhance efficiency and service adoption."
+            "Analyzed banking user behavior using Python and SQL. Helped modernize systems and improve features. Boosted engagement and user satisfaction."
     },
     {
         type: "experience",
@@ -54,7 +54,7 @@ const journey = [
         position: "Backend Developer",
         duration: "Jun 2017 - Jul 2019",
         description:
-            "I optimized database architecture and code performance, achieving 25% faster processing, 18% less downtime, and a 7% drop in operational incidents through quality engineering practices."
+            "Improved data pipelines using SQL and backend tools. Cleaned raw server data for analytics. Reduced data issues by 20%."
     },
     // education
     {
