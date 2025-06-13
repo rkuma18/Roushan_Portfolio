@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { FaFacebook, FaTwitter, FaLinkedin, FaGithub, SiMedium } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { SiMedium } from "react-icons/si";
 import { RiInstagramFill } from 'react-icons/ri';
 
 const socials = [
