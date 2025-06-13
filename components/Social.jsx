@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { FaFacebook, FaTwitter, FaLinkedin, FaGithub } from 'react-icons/fa';
 import { SiMedium } from "react-icons/si";
-import { RiInstagramFill } from 'react-icons/ri';
+import { RiInstagramFill, RiTwitterXLine } from 'react-icons/ri';
+
 
 const socials = [
     {
@@ -13,7 +14,7 @@ const socials = [
         path: "https://www.linkedin.com/in/rk0718/"
     },
     {
-        icon: <FaTwitter />,
+        icon: <RiTwitterXLine />,
         path: "https://x.com/rkuma07"
     },
     {
