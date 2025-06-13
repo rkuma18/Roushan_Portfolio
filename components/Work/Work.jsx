@@ -28,7 +28,7 @@ const data = [
         href: "https://github.com/rkuma18/Chest_Cancer_Classification",
         category: "DL",
         img: "/assets/work/thumb-3.png",
-        title: "Chest_Cancer_Classification",
+        title: "Chest Cancer Classification",
     },
     {
         href: "https://huggingface.co/spaces/rkuma18/Currency_Converter_Chat",

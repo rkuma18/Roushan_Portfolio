@@ -4,12 +4,12 @@ const services = [
     {
         icon: "assets/services/icon-1.svg",
         title: "AI & Machine Learning Solutions",
-        description: "Design and deploy custom ML models for real-world problems ranging from recommendation systems and fraud detection to customer segmentation and forecasting.",
+        description: "Design and deploy custom ML models for real world problems ranging from recommendation systems and fraud detection to customer segmentation and forecasting.",
     },
     {
         icon: "assets/services/icon-2.svg",
         title: "Data Strategy & Analytics Consulting",
-        description: "Transform raw data into insights with end-to-end analytics solutions data cleaning, feature engineering, dashboard creation, and storytelling for decision-makers..",
+        description: "Transform raw data into insights with end-to-end analytics solutions data cleaning, feature engineering, dashboard creation, and storytelling for decision makers..",
     },
     {
         icon: "assets/services/icon-3.svg",
@@ -31,10 +31,10 @@ const Services = () => {
                     {services.map((service, index) => {
                         return (
                             <li key={index} className="bg-white shadow-custom p-6 max-w-[350px] md:max-w-none rounded-lg">
-                                <Image 
-                                    src={service.icon} 
-                                    width={48} 
-                                    height={48} 
+                                <Image
+                                    src={service.icon}
+                                    width={48}
+                                    height={48}
                                     alt={`${service.title} icon`}
                                     className="mb-4"
                                 />

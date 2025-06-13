@@ -65,8 +65,8 @@ const About = () => {
                             industries like <span className="font-medium">BFSI, Retail, Logistics, and Hospitality</span>.
                             <br /><br />
                             My current focus lies in working with <strong>LLMs</strong>,
-                            <strong> Retrieval-Augmented Generation (RAG)</strong> pipelines, and deploying
-                            <strong> practical AI</strong> in real-world products.
+                            <strong> Retrieval Augmented Generation (RAG)</strong> pipelines, and deploying
+                            <strong> practical AI</strong> in real world products.
                             <br /><br />
                             Outside of tech, I’m an avid <strong>traveler and photographer</strong>,
                             always exploring new perspectives both through data and through life.
