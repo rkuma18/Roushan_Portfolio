@@ -25,7 +25,7 @@ const journey = [
         company: "Tesco",
         logoUrl: "/assets/journey/experience/logo-2.svg",
         position: "Associate",
-        duration: "Nov 2022 - Jan 2023",
+        duration: "Oct 2022 - Mar 2023",
         description:
             "I worked part-time in a fast-paced fulfillment team, efficiently processing orders under tight deadlines to support smooth delivery and enhance the customer experience in a high-volume retail setting."
     },
@@ -34,7 +34,7 @@ const journey = [
         company: "Amazon",
         logoUrl: "/assets/journey/experience/logo-3.svg",
         position: "Warehouse Associate",
-        duration: "Nov 2020 - Jan 2021",
+        duration: "Nov 2021 - Jan 2022",
         description:
             "I worked part-time at Amazon's high-volume warehouse, processing orders under tight deadlines and supporting supply chain efficiency through accurate inventory and logistics coordination."
     },
@@ -43,7 +43,7 @@ const journey = [
         company: "Tata Consultancy Services",
         logoUrl: "/assets/journey/experience/logo-4.svg",
         position: "Data Analyst",
-        duration: "July 2019 - Jul 2021",
+        duration: "Mar 2019 - Jul 2021",
         description:
             "Analyzed banking user behavior using Python and SQL. Helped modernize systems and improve features. Boosted engagement and user satisfaction."
     },
@@ -52,7 +52,7 @@ const journey = [
         company: "Tata Consultancy Services",
         logoUrl: "/assets/journey/experience/logo-4.svg",
         position: "Backend Developer",
-        duration: "Jun 2017 - Jul 2019",
+        duration: "Jun 2017 - Mar 2019",
         description:
             "Improved data pipelines using SQL and backend tools. Cleaned raw server data for analytics. Reduced data issues by 20%."
     },
