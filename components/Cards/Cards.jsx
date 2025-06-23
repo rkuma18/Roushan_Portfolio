@@ -15,7 +15,7 @@ const journey = [
         type: "experience",
         company: "JD Wetherspoons",
         logoUrl: "/assets/journey/experience/logo-1.svg",
-        position: "Manager",
+        position: "Data Analyst",
         duration: "Apr 2023 - Feb 2025",
         description:
             "Worked on sales, stock, and P&L data using Python. Built forecasts to plan rotas and stock better. Helped reduce waste and raise profit margins by 10%."
@@ -24,7 +24,7 @@ const journey = [
         type: "experience",
         company: "Tesco",
         logoUrl: "/assets/journey/experience/logo-2.svg",
-        position: "Associate",
+        position: "Order Fulfillment Analyst (Part-time)",
         duration: "Oct 2022 - Mar 2023",
         description:
             "I worked part-time in a fast-paced fulfillment team, efficiently processing orders under tight deadlines to support smooth delivery and enhance the customer experience in a high-volume retail setting."
@@ -33,7 +33,7 @@ const journey = [
         type: "experience",
         company: "Amazon",
         logoUrl: "/assets/journey/experience/logo-3.svg",
-        position: "Warehouse Associate",
+        position: "Logistics Operations Associate (Part-time)",
         duration: "Nov 2021 - Jan 2022",
         description:
             "I worked part-time at Amazon's high-volume warehouse, processing orders under tight deadlines and supporting supply chain efficiency through accurate inventory and logistics coordination."
@@ -51,7 +51,7 @@ const journey = [
         type: "experience",
         company: "Tata Consultancy Services",
         logoUrl: "/assets/journey/experience/logo-4.svg",
-        position: "Backend Developer",
+        position: "Data Engineer – Backend",
         duration: "Jun 2017 - Mar 2019",
         description:
             "Improved data pipelines using SQL and backend tools. Cleaned raw server data for analytics. Reduced data issues by 20%."
