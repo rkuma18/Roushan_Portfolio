@@ -15,10 +15,10 @@ const journey = [
         type: "experience",
         company: "JD Wetherspoons",
         logoUrl: "/assets/journey/experience/logo-1.svg",
-        position: "Data Analyst",
+        position: "Operations Analyst (Full-time)",
         duration: "Apr 2023 - Feb 2025",
         description:
-            "Worked on sales, stock, and P&L data using Python. Built forecasts to plan rotas and stock better. Helped reduce waste and raise profit margins by 10%."
+            "Led sales forecasting and staff planning using time series models, reducing overstaffing and improving shift alignment. Optimized inventory with predictive analytics, ensuring 100% stock availability during peak operations. Built dashboards to track KPIs, contributing to 100% audit compliance and record revenue."
     },
     {
         type: "experience",
@@ -27,34 +27,34 @@ const journey = [
         position: "Order Fulfillment Analyst (Part-time)",
         duration: "Oct 2022 - Mar 2023",
         description:
-            "I worked part-time in a fast-paced fulfillment team, efficiently processing orders under tight deadlines to support smooth delivery and enhance the customer experience in a high-volume retail setting."
+            "Enhanced order fulfillment efficiency by optimizing substitution logic and analyzing SKU availability. Achieved a 99.5% on-time delivery rate by streamlining pick-pack-dispatch workflows in a high-volume retail environment."
     },
     {
         type: "experience",
         company: "Amazon",
         logoUrl: "/assets/journey/experience/logo-3.svg",
-        position: "Logistics Operations Associate (Part-time)",
+        position: "Operations Analyst (Part-time)",
         duration: "Nov 2021 - Jan 2022",
         description:
-            "I worked part-time at Amazon's high-volume warehouse, processing orders under tight deadlines and supporting supply chain efficiency through accurate inventory and logistics coordination."
+            "Boosted warehouse throughput by 8% by redesigning sortation workflows and performing root-cause analysis. Enabled routing optimization for 800+ parcels through barcode stream processing and real-time validation."
     },
     {
         type: "experience",
         company: "Tata Consultancy Services",
         logoUrl: "/assets/journey/experience/logo-4.svg",
-        position: "Data Analyst",
+        position: "Data Analyst (Full-time)",
         duration: "Mar 2019 - Jul 2021",
         description:
-            "Analyzed banking user behavior using Python and SQL. Helped modernize systems and improve features. Boosted engagement and user satisfaction."
+            "Performed EDA on large-scale customer datasets to drive segmentation and targeted marketing. Built real-time dashboards to track engagement and product adoption. Improved agile reporting accuracy by 20% through sprint progress analytics."
     },
     {
         type: "experience",
         company: "Tata Consultancy Services",
         logoUrl: "/assets/journey/experience/logo-4.svg",
-        position: "Data Engineer – Backend",
+        position: "Backend Developer (Full-time)",
         duration: "Jun 2017 - Mar 2019",
         description:
-            "Improved data pipelines using SQL and backend tools. Cleaned raw server data for analytics. Reduced data issues by 20%."
+            "Developed ETL pipelines to process 10M+ records/day from global systems. Standardized raw JSON data for analytics and model training. Reduced ingestion errors from 5% to 1% by optimizing SQL workflows and implementing robust data validation."
     },
     // education
     {
