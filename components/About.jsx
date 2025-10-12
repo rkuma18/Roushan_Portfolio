@@ -1,7 +1,7 @@
-import Image from "next/image";
-import { motion } from "framer-motion";
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 // components
-import AnimatedText from "./AnimatedText";
+import AnimatedText from './AnimatedText';
 
 const About = () => {
     return (
@@ -32,7 +32,7 @@ const About = () => {
                                     }}
                                     transition={{
                                         duration: 10,
-                                        ease: "linear",
+                                        ease: 'linear',
                                         repeat: Infinity,
                                     }}
                                 >
@@ -59,17 +59,24 @@ const About = () => {
                             <p className="text-lg">Data Scientist</p>
                         </div>
                         <p className="max-w-[680px] mx-auto xl:mx-0 mb-2">
-                            I'm a <strong>Data Scientist and AI Engineer</strong> with 6+ years of experience in
-                            machine learning, NLP, and AI automation. I specialize in building scalable solutions
-                            from AI chatbots and recommendation systems to intelligent analytics platforms across
-                            industries like <span className="font-medium">BFSI, Retail, Logistics, and Hospitality</span>.
-                            <br /><br />
-                            My current focus lies in working with <strong>LLMs</strong>,
-                            <strong> Retrieval Augmented Generation (RAG)</strong> pipelines, and deploying
-                            <strong> practical AI</strong> in real world products.
-                            <br /><br />
-                            Outside of tech, I’m an avid <strong>traveler and photographer</strong>,
-                            always exploring new perspectives both through data and through life.
+                            I am Roushan Kumar, a highly accomplished{' '}
+                            <strong>Data Scientist and AI Engineer</strong> with 6+ years of
+                            experience. I specialize in building, deploying, and scaling high-impact
+                            AI solutions across
+                            <span className="font-medium">BFSI, Retail, and Logistics sectors</span>
+                            .
+                            <br />
+                            <br />
+                            My core expertise is in <strong>Generative AI</strong>, focusing on
+                            **RAG systems (GPT-4)**, intelligent **LLM agent development**, and
+                            production-ready **MLOps** pipelines. I leverage predictive analytics
+                            and deep learning to drive measurable business value, including
+                            delivering **20% higher reporting accuracy** and significantly **cutting
+                            data ingestion errors from 5% to 1%**.
+                            <br />
+                            <br />I am adept at taking models from research to deployment using
+                            **Docker, FastAPI, and AWS**. Outside of tech, I'm an avid traveler and
+                            photographer, always exploring new perspectives.
                         </p>
                         {/* info items */}
                         <div className="flex flex-col lg:flex-row gap-8 xl:gap-12 max-w-max mx-auto xl:mx-0 items-center">
@@ -98,7 +105,7 @@ const About = () => {
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default About
+export default About;
