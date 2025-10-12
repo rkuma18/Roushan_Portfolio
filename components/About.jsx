@@ -62,21 +62,22 @@ const About = () => {
                             I am Roushan Kumar, a highly accomplished{' '}
                             <strong>Data Scientist and AI Engineer</strong> with 6+ years of
                             experience. I specialize in building, deploying, and scaling high-impact
-                            AI solutions across
+                            AI solutions across{' '}
                             <span className="font-medium">BFSI, Retail, and Logistics sectors</span>
                             .
                             <br />
                             <br />
-                            My core expertise is in <strong>Generative AI</strong>, focusing on
-                            **RAG systems (GPT-4)**, intelligent **LLM agent development**, and
-                            production-ready **MLOps** pipelines. I leverage predictive analytics
-                            and deep learning to drive measurable business value, including
-                            delivering **20% higher reporting accuracy** and significantly **cutting
-                            data ingestion errors from 5% to 1%**.
+                            My core expertise is in <strong>Generative AI</strong>, focusing on{' '}
+                            <strong>RAG systems (GPT-4)</strong>, intelligent{' '}
+                            <strong>LLM agent development</strong>, and production-ready{' '}
+                            <strong>MLOps</strong> pipelines. I leverage predictive analytics and
+                            deep learning to drive measurable business value, including delivering{' '}
+                            <strong>20% higher reporting accuracy</strong> and significantly{' '}
+                            <strong>cutting data ingestion errors from 5% to 1%</strong>.
                             <br />
-                            <br />I am adept at taking models from research to deployment using
-                            **Docker, FastAPI, and AWS**. Outside of tech, I'm an avid traveler and
-                            photographer, always exploring new perspectives.
+                            <br />I am adept at taking models from research to deployment using{' '}
+                            <strong>Docker, FastAPI, and AWS</strong>. Outside of tech, I'm an avid
+                            traveler and photographer, always exploring new perspectives.
                         </p>
                         {/* info items */}
                         <div className="flex flex-col lg:flex-row gap-8 xl:gap-12 max-w-max mx-auto xl:mx-0 items-center">
