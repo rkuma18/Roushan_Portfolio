@@ -47,9 +47,9 @@ const journey = [
     },
     {
         type: 'experience',
-        company: 'Amazon',
+        company: 'Amazon UK (via Adecco)',
         logoUrl: '/assets/journey/experience/logo-3.svg',
-        position: 'Operations Analyst (Part-time)',
+        position: 'Operations Associate (Part-time)',
         duration: 'Nov 2021 - Jan 2022',
         description:
             'Increased warehouse efficiency by 8% by improving sorting processes and identifying bottlenecks. Streamlined delivery routes for 800+ parcels daily through better package tracking and validation systems.',
