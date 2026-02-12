@@ -1,39 +1,23 @@
 "use client";
 import { Link as ScrollLink } from 'react-scroll';
-
-const links = [
-    {
-        name: "home"
-    },
-    {
-        name: "about"
-    },
-    {
-        name: "journey"
-    },
-    {
-        name: "work"
-    },
-    {
-        name: "contact"
-    },
-];
+import { navigationData } from '@/data/navigationData';
+import PropTypes from 'prop-types';
 
 const Nav = ({ containerStyles, listStyles, linkStyles, spy }) => {
     return (
-        <nav className={containerStyles}>
+        <nav className={containerStyles} aria-label="Main navigation">
             <ul className={listStyles}>
-                {links.map((link, index) => {
+                {navigationData.map((link) => {
                     return (
-                        <li key={index}>
-                            <ScrollLink 
-                                spy={spy} 
-                                activeClass="active" 
-                                to={link.name} 
-                                smooth 
+                        <li key={link.name}>
+                            <ScrollLink
+                                spy={spy}
+                                activeClass="active"
+                                to={link.name}
+                                smooth
                                 className={linkStyles}
                             >
-                                {link.name}
+                                {link.label}
                             </ScrollLink>
                         </li>
                     );
@@ -41,6 +25,20 @@ const Nav = ({ containerStyles, listStyles, linkStyles, spy }) => {
             </ul>
         </nav>
     );
+};
+
+Nav.propTypes = {
+    containerStyles: PropTypes.string,
+    listStyles: PropTypes.string,
+    linkStyles: PropTypes.string,
+    spy: PropTypes.bool,
+};
+
+Nav.defaultProps = {
+    containerStyles: '',
+    listStyles: '',
+    linkStyles: '',
+    spy: false,
 };
 
 export default Nav;

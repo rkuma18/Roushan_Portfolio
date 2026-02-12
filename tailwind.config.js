@@ -18,17 +18,20 @@ module.exports = {
 		xl: '1200px'
 	  },
 	  fontFamily: {
-		primary: ['var(--font-bebas)', 'cursive', 'sans-serif'],
+		primary: ['var(--font-space-grotesk)', 'sans-serif'],
 		secondary: ['var(--font-inter)', 'sans-serif']
 	  },
 	  extend: {
 		colors: {
-		  primary: "#10151F",
-		  secondary: "#475467",
+		  primary: "#0F172A",        // Slate 900 - deeper, richer dark
+		  secondary: "#64748B",      // Slate 500 - softer gray
 		  accent: {
-			DEFAULT: "#7edad2",
-			hover: "#79d3cc",
+			DEFAULT: "#3B82F6",      // Vibrant blue - energetic, trustworthy
+			hover: "#2563EB",        // Blue 600 - noticeable hover
 		  },
+		  success: "#10B981",        // Emerald 500 - for success states
+		  warning: "#F59E0B",        // Amber 500 - for warnings
+		  error: "#EF4444",          // Red 500 - for errors
 		  // Additional colors for better compatibility
 		  white: "#ffffff",
 		  black: "#000000",

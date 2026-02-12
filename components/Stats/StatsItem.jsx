@@ -1,4 +1,5 @@
 import CountUp from "react-countup";
+import PropTypes from 'prop-types';
 
 const StatsItem = ({ endCountNum, endCountText, text }) => {
     return (
@@ -10,6 +11,12 @@ const StatsItem = ({ endCountNum, endCountText, text }) => {
             <p className="text-sm">{text}</p>
         </div>
     );
+};
+
+StatsItem.propTypes = {
+    endCountNum: PropTypes.number.isRequired,
+    endCountText: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
 };
 
 export default StatsItem;

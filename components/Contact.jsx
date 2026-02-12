@@ -2,11 +2,10 @@ import {useState, useEffect} from "react";
 // form spree
 import {useForm, ValidationError} from "@formspree/react"
 import AnimatedText from "./AnimatedText";
-import Image from "next/image";
 import {FaCheckCircle} from "react-icons/fa";
 
 const Contact = () => {
-    const [state, handleSubmit] = useForm("mvgrgybw");
+    const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_FORMSPREE_ID);
     // state for form inputs
     const [formData, setFormData] = useState({
         firstname: "",
@@ -54,12 +53,12 @@ const Contact = () => {
     
     return (
         <section className="pt-8 xl:pt-12 pb-32" id="contact">
-            <div className="container mx-auto">
-                <div className="flex flex-col items-center xl:flex-row gap-16">
-                    <div className="flex-1 mx-auto xl:mx-0 flex flex-col">
-                        <AnimatedText text="Let's Connect" textStyles="h2 mb-12 text-center xl:text-left"/>
+            <div className="w-full px-4 xl:px-32">
+                <div className="flex flex-col items-center">
+                    <div className="w-full max-w-[600px] mx-auto flex flex-col">
+                        <AnimatedText text="Let's Connect" textStyles="h2 mb-12 text-center"/>
                         {/* form */}
-                        <form onSubmit={handleFormSubmit} className="flex flex-col gap-6 w-full max-w-[480px]">
+                        <form onSubmit={handleFormSubmit} className="flex flex-col gap-6 w-full">
                             {/* firstname & lastname fields */}
                             <div className="flex gap-8">
                                 {/* First name */}
@@ -116,10 +115,6 @@ const Contact = () => {
                                 }
                             </button>
                         </form>
-                    </div>
-                    {/* image */}
-                    <div className="hidden xl:flex relative w-[557px] h-[664px] rounded-lg overflow-hidden">
-                        <Image src="/assets/contact/img.png" className="object-cover" fill quality={100} alt="" />
                     </div>
                 </div>
             </div>

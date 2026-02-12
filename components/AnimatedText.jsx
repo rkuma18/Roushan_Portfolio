@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import PropTypes from 'prop-types';
 
 const letterAnimation = {
     initial: {
@@ -21,12 +22,12 @@ const getLetter = (name) => {
     let letters = [];
     name.split("").forEach((letter, index) => {
         letters.push(
-            <motion.span 
-                variants={letterAnimation} 
-                initial="initial" 
-                whileInView="animate" 
+            <motion.span
+                variants={letterAnimation}
+                initial="initial"
+                whileInView="animate"
                 custom={[index * 0.02, (name.length - index) * 0.01]}
-                key={index}
+                key={`${index}-${letter}`}
                 className="inline-block"
             >
                 {letter === " " ? "\u00A0" : letter}
@@ -42,6 +43,15 @@ const AnimatedText = ({ text, textStyles }) => {
             {getLetter(text)}
         </div>
     );
+};
+
+AnimatedText.propTypes = {
+    text: PropTypes.string.isRequired,
+    textStyles: PropTypes.string,
+};
+
+AnimatedText.defaultProps = {
+    textStyles: '',
 };
 
 export default AnimatedText;

@@ -2,16 +2,29 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { CgMenuGridR} from 'react-icons/cg';
 import { useMediaQuery } from "react-responsive";
-import {FiMapPin, FiPhoneCall, FiMail} from 'react-icons/fi';
+import {FiMapPin, FiMail} from 'react-icons/fi';
 
 //components
 import Nav from "./Nav";
 import Social from "./Social";
 
+const SCROLL_THRESHOLD = 150;
+
 const FixedMenu = () => {
     const [showMenuButton, setShowMenuButton] = useState(false);
     const [showMenu, setShowMenu] = useState(false);
     const [isMounted, setIsMounted] = useState(false); // ensure the component is mounted
+
+    // handle escape key to close menu
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.key === 'Escape' && showMenu) {
+                setShowMenu(false);
+            }
+        };
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [showMenu]);
     
     const isMobile = useMediaQuery({
         query: "(max-width: 640px)",
@@ -25,7 +38,7 @@ const FixedMenu = () => {
     useEffect(() => {
         if (isMounted){
             const handleScroll = () => {
-                setShowMenuButton(window.scrollY > 150) //show the button after scrolling 150px
+                setShowMenuButton(window.scrollY > SCROLL_THRESHOLD);
             };
             if (!isMobile) {
                 window.addEventListener("scroll", handleScroll);
@@ -45,12 +58,13 @@ const FixedMenu = () => {
             <AnimatePresence>
                 {
                     showMenu && showMenuButton && (
-                        <motion.div 
-                        initial={{opacity: 0, y:20}} 
+                        <motion.div
+                        initial={{opacity: 0, y:20}}
                         animate={{opacity:1 , y:0}}
                         exit={{opacity: 0, y:20}}
                         transition={{duration: 0.2}}
-                        
+                        role="dialog"
+                        aria-label="Navigation menu"
                         className="relative w-full max-w-md md:max-w-none h-[400px] bottom-[28rem] xl:bottom-[21.2rem] px-4 pointer-events-auto">
                             <div className="bg-white w-full h-full shadow-custom max-w-[1170px] mx-auto py-12 px-12 xl:px-32 flex items-center gap-12 rounded-lg">
                                 <Nav 
@@ -70,15 +84,7 @@ const FixedMenu = () => {
                                                     <FiMapPin />
                                                 </div>
                                                 <p className="font-semibold text-primary text-lg">Location</p>
-                                                <p>Pune, India</p>
-                                            </div>
-                                            {/* phone */}
-                                            <div className="flex flex-col">
-                                                <div className="text-[28px] text-accent mb-2">
-                                                    <FiPhoneCall />
-                                                </div>
-                                                <p className="font-semibold text-primary text-lg">Phone</p>
-                                                <p>+91 8986510661</p>
+                                                <p>Mumbai, India</p>
                                             </div>
                                              {/* email */}
                                              <div className="flex flex-col">
@@ -103,7 +109,12 @@ const FixedMenu = () => {
             {/* render button without animations on mobile */}
             {isMobile ? (
                 <div className="fixed z-50 bottom-16">
-                    <button onClick={()=> setShowMenu(!showMenu)} className="bg-accent shadow-custom w-[54px] h-[54px] rounded-lg cursor-pointer flex items-center justify-center select-none pointer-events-auto">
+                    <button
+                        onClick={()=> setShowMenu(!showMenu)}
+                        className="bg-accent shadow-custom w-[54px] h-[54px] rounded-lg cursor-pointer flex items-center justify-center select-none pointer-events-auto"
+                        aria-label="Toggle navigation menu"
+                        aria-expanded={showMenu}
+                    >
                         <CgMenuGridR  className="text-4xl text-white"/>
                     </button>
                 </div>
@@ -121,8 +132,12 @@ const FixedMenu = () => {
                             }}
                            className="fixed z-50 bottom-16 pointer-events-auto"
                         >
-                            <button onClick={()=> setShowMenu(!showMenu)}
-                            className="bg-accent shadow-custom w-[54px] h-[54px] rounded-lg cursor-pointer flex items-center justify-center select-none">
+                            <button
+                                onClick={()=> setShowMenu(!showMenu)}
+                                className="bg-accent shadow-custom w-[54px] h-[54px] rounded-lg cursor-pointer flex items-center justify-center select-none"
+                                aria-label="Toggle navigation menu"
+                                aria-expanded={showMenu}
+                            >
                                 <CgMenuGridR className="text-4xl text-white"/></button>
                         </motion.div>
                     )}

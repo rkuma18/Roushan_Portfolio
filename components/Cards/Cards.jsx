@@ -2,309 +2,7 @@
 import Card from './Card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaPython, FaBrain, FaAws, FaLanguage, FaRProject, FaNetworkWired } from 'react-icons/fa';
-import {
-    SiPytorch,
-    SiTensorflow,
-    SiKeras,
-    SiMysql,
-    SiNumpy,
-    SiPandas,
-    SiOpenai,
-    SiHuggingface,
-    SiLangchain,
-    SiSpacy,
-    SiDocker,
-    SiGithub,
-    SiJupyter,
-    SiDvc,
-    SiMlflow,
-} from 'react-icons/si';
-import { GiMaterialsScience } from 'react-icons/gi';
-import { PiMicrosoftExcelLogoDuotone } from 'react-icons/pi';
-import { AiOutlineStock } from 'react-icons/ai';
-import { TbBinaryOff } from 'react-icons/tb';
-
-const journey = [
-    // experience
-    {
-        type: 'experience',
-        company: 'JD Wetherspoons',
-        logoUrl: '/assets/journey/experience/logo-1.svg',
-        position: 'Operations Analyst (Full-time)',
-        duration: 'Apr 2023 - Feb 2025',
-        description:
-            'Forecasted sales and optimized staff schedules to reduce costs while maintaining peak performance. Managed inventory to ensure full stock availability during busy periods. Built tracking tools that supported record revenue and perfect audit scores.',
-    },
-    {
-        type: 'experience',
-        company: 'Tesco',
-        logoUrl: '/assets/journey/experience/logo-2.svg',
-        position: 'Order Fulfillment Analyst (Part-time)',
-        duration: 'Oct 2022 - Mar 2023',
-        description:
-            'Improved online order processing by refining product replacement strategies and monitoring stock levels. Achieved 99.5% on-time delivery by streamlining the picking, packing, and dispatch process in a fast-paced retail setting.',
-    },
-    {
-        type: 'experience',
-        company: 'Amazon UK (via Adecco)',
-        logoUrl: '/assets/journey/experience/logo-3.svg',
-        position: 'Operations Associate (Part-time)',
-        duration: 'Nov 2021 - Jan 2022',
-        description:
-            'Increased warehouse efficiency by 8% by improving sorting processes and identifying bottlenecks. Streamlined delivery routes for 800+ parcels daily through better package tracking and validation systems.',
-    },
-    {
-        type: 'experience',
-        company: 'Tata Consultancy Services',
-        logoUrl: '/assets/journey/experience/logo-4.svg',
-        position: 'Data Analyst (Full-time)',
-        duration: 'Mar 2019 - Jul 2021',
-        description:
-            'Analyzed customer data to identify audience segments for targeted marketing. Built live dashboards to track engagement and product usage. Improved project reporting accuracy by 20% through enhanced progress tracking.',
-    },
-    {
-        type: 'experience',
-        company: 'Tata Consultancy Services',
-        logoUrl: '/assets/journey/experience/logo-4.svg',
-        position: 'Backend Developer (Full-time)',
-        duration: 'Jun 2017 - Mar 2019',
-        description:
-            'Built automated systems to process 10M+ records daily from global sources. Standardized raw data for analysis and business insights. Reduced data errors from 5% to 1% through improved workflows and validation.',
-    },
-    // education
-    {
-        type: 'education',
-        company: 'Cardiff University',
-        logoUrl: '/assets/journey/education/logo-1.svg',
-        qualification: 'Master of Data Science and Analytics',
-        duration: 'Sep 2021 - Jan 2023',
-        description:
-            'Gained practical experience in ML, data mining, and predictive analytics, using Python, R, and SQL to solve real-world business problems.',
-    },
-    {
-        type: 'education',
-        company: 'SRM University',
-        logoUrl: '/assets/journey/education/logo-2.svg',
-        qualification: 'Bachelor of Computer Science and Engineering',
-        duration: 'June 2013 - May 2017',
-        description:
-            'Built a solid foundation in software development and computer systems through hands-on projects, focusing on data structures, algorithms, and databases.',
-    },
-    // Skills
-    //Programming Languages
-    {
-        type: 'skills',
-        name: 'Python',
-        icon: <FaPython />,
-        duration: 'Learned in 2017',
-        description:
-            'My go-to language for data science tasks, automation, machine learning, and API development.',
-    },
-    {
-        type: 'skills',
-        name: 'R Programming',
-        icon: <FaRProject />,
-        duration: 'Learned in 2020',
-        description:
-            'I use R primarily for statistical modeling, data visualization, and quick experimentation in academic or research settings.',
-    },
-    {
-        type: 'skills',
-        name: 'SQL',
-        icon: <SiMysql />,
-        duration: 'Learned in 2014',
-        description:
-            'I work with SQL regularly to extract, manipulate, and analyze data from relational databases efficiently.',
-    },
-    //Frameworks & Libraries
-    {
-        type: 'skills',
-        name: 'Numpy',
-        icon: <SiNumpy />,
-        duration: 'Learned in 2017',
-        description: 'I rely on NumPy for fast numerical computations and array operations.',
-    },
-    {
-        type: 'skills',
-        name: 'Pandas',
-        icon: <SiPandas />,
-        duration: 'Learned in 2017',
-        description:
-            ' I use Pandas to clean, transform, and analyze structured data efficiently in Python.',
-    },
-    {
-        type: 'skills',
-        name: 'Tensorflow',
-        icon: <SiTensorflow />,
-        duration: 'Learned in 2020',
-        description:
-            'I use TensorFlow for building and training scalable deep learning models in production.',
-    },
-    {
-        type: 'skills',
-        name: 'Keras',
-        icon: <SiKeras />,
-        duration: 'Learned in 2020',
-        description:
-            'I prefer Keras for its simplicity when prototyping neural networks or experimenting with model architectures.',
-    },
-    {
-        type: 'skills',
-        name: 'PyTorch',
-        icon: <SiPytorch />,
-        duration: 'Learned in 2022',
-        description:
-            'I enjoy using PyTorch for its flexibility and ease of debugging, especially in NLP and GenAI experiments.',
-    },
-    {
-        type: 'skills',
-        name: 'Openai',
-        icon: <SiOpenai />,
-        duration: 'Learned in 2024',
-        description:
-            'I leverage OpenAI’s API to build language aware applications like chat assistants, summarizers, and intelligent search.',
-    },
-    {
-        type: 'skills',
-        name: 'Hugging Face Transformers',
-        icon: <SiHuggingface />,
-        duration: 'Learned in 2023',
-        description:
-            'My go-to library for working with state-of-the-art pre-trained transformer models like BERT, GPT, and more.',
-    },
-    {
-        type: 'skills',
-        name: 'LangChain',
-        icon: <SiLangchain />,
-        duration: 'Learned in 2024',
-        description:
-            ' I’ve used LangChain to orchestrate LLM pipelines, integrate external tools, and develop retrieval augmented chat experiences.',
-    },
-    {
-        type: 'skills',
-        name: 'LangGraph',
-        icon: <SiLangchain />,
-        duration: 'Learned in 2024',
-        description:
-            ' I build RAG pipelines, intelligent agents, and end-to-end LLM apps using LangChain’s modular components for production-ready AI solutions.',
-    },
-    {
-        type: 'skills',
-        name: 'LangSmith',
-        icon: <SiLangchain />,
-        duration: 'Learned in 2024',
-        description:
-            'I use LangSmith for tracing, evaluating, and debugging LLM workflows to ensure reliability and observability in AI-driven applications.',
-    },
-    // Machine Learning & AI
-    {
-        type: 'skills',
-        name: 'Machine Learning',
-        icon: <FaBrain />,
-        duration: 'Learned in 2020',
-        description: 'I apply ML techniques to build predictive models and uncover data patterns.',
-    },
-    {
-        type: 'skills',
-        name: 'Neural Networks',
-        icon: <FaNetworkWired />,
-        duration: 'Learned in 2021',
-        description:
-            'I design and train neural networks for pattern recognition, classification, and regression tasks.',
-    },
-    {
-        type: 'skills',
-        name: 'spaCy',
-        icon: <SiSpacy />,
-        duration: 'Learned in 2021',
-        description:
-            'I use NLTK and spaCy for tasks like tokenization, named entity recognition, and text preprocessing.',
-    },
-    {
-        type: 'skills',
-        name: 'Generative AI',
-        icon: <GiMaterialsScience />,
-        duration: 'Learned in 2024',
-        description:
-            ' I’ve built generative AI apps that can write, summarize, and respond intelligently using foundation models.',
-    },
-    // Tools & Platforms
-    {
-        type: 'skills',
-        name: 'Microsoft Excel',
-        icon: <PiMicrosoftExcelLogoDuotone />,
-        duration: 'Learned in 2014',
-        description:
-            'I use Excel for quick analysis, forecasting, and building structured models for business stakeholders.',
-    },
-    {
-        type: 'skills',
-        name: 'Docker',
-        icon: <SiDocker />,
-        duration: 'Learned in 2020',
-        description:
-            'I package applications and models into reproducible containers for easy deployment across environments.',
-    },
-    {
-        type: 'skills',
-        name: 'Github',
-        icon: <SiGithub />,
-        duration: 'Learned in 2016',
-        description:
-            'I manage code versioning and collaborate efficiently using Git for all my projects.',
-    },
-    {
-        type: 'skills',
-        name: 'Jupyter Notebook',
-        icon: <SiJupyter />,
-        duration: 'Learned in 2019',
-        description:
-            'I use Jupyter for exploratory data analysis, visual storytelling, and reproducible workflows.',
-    },
-    {
-        type: 'skills',
-        name: 'DvC',
-        icon: <SiDvc />,
-        duration: 'Learned in 2024',
-        description:
-            'I manage code versioning and collaborate efficiently using DvC for all my ML and DL project.',
-    },
-    {
-        type: 'skills',
-        name: 'Mlflow',
-        icon: <SiMlflow />,
-        duration: 'Learned in 2024',
-        description:
-            'I use MLflow to track experiments, manage model lifecycle, and streamline deployment workflows in my ML and AI projects.',
-    },
-    // Cloud Platforms
-    {
-        type: 'skills',
-        name: 'AWS',
-        icon: <FaAws />,
-        duration: 'Learned in 2019',
-        description:
-            'I use AWS services like S3 and Lambda to store data, automate workflows, and deploy serverless applications.',
-    },
-    // Statistical & Analytical Skills
-    {
-        type: 'skills',
-        name: 'Forecasting',
-        icon: <AiOutlineStock />,
-        duration: 'Learned in 2021',
-        description:
-            'I apply time series techniques to predict future metrics and guide business planning.',
-    },
-    {
-        type: 'skills',
-        name: 'Regression & Classification',
-        icon: <TbBinaryOff />,
-        duration: 'Learned in 2020',
-        description:
-            'I design and evaluate models for both continuous and categorical outcome predictions.',
-    },
-];
+import { journeyData } from '@/data/journeyData';
 
 const Cards = () => {
     return (
@@ -323,10 +21,10 @@ const Cards = () => {
                         exit={{ opacity: 0, y: 20 }}
                         transition={{ duration: 0.3 }}
                     >
-                        {journey
+                        {journeyData
                             .filter((item) => item.type === 'experience')
-                            .map((card, index) => {
-                                return <Card key={index} {...card} />;
+                            .map((card) => {
+                                return <Card key={card.id} {...card} />;
                             })}
                     </motion.div>
                 </AnimatePresence>
@@ -340,10 +38,10 @@ const Cards = () => {
                         exit={{ opacity: 0, y: 20 }}
                         transition={{ duration: 0.3 }}
                     >
-                        {journey
+                        {journeyData
                             .filter((item) => item.type === 'education')
-                            .map((card, index) => {
-                                return <Card key={index} {...card} />;
+                            .map((card) => {
+                                return <Card key={card.id} {...card} />;
                             })}
                     </motion.div>
                 </AnimatePresence>
@@ -357,10 +55,10 @@ const Cards = () => {
                         exit={{ opacity: 0, y: 20 }}
                         transition={{ duration: 0.3 }}
                     >
-                        {journey
+                        {journeyData
                             .filter((item) => item.type === 'skills')
-                            .map((card, index) => {
-                                return <Card key={index} {...card} />;
+                            .map((card) => {
+                                return <Card key={card.id} {...card} />;
                             })}
                     </motion.div>
                 </AnimatePresence>

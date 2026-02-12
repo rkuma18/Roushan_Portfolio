@@ -1,4 +1,5 @@
 import Image from "next/image";
+import PropTypes from 'prop-types';
 
 const Card = ({
     type,
@@ -14,7 +15,7 @@ const Card = ({
 }) => {
     return (
         <div className="w-full h-[300px] overflow-hidden flex items-center sticky top-12">
-            <div className="w-full h-[270px] border border-accent/80 bg-[#f4ffff] rounded-[8px]">
+            <div className="w-full h-[270px] border border-accent/80 bg-[#EFF6FF] rounded-[8px]">
                 <div className="flex flex-col h-full">
                     <div className="h-[80px] xl:h-[68px] bg-white flex flex-col xl:flex-row justify-center xl:justify-between items-center px-6 md:px-[84px] rounded-tl-[8px] rounded-tr-[8px]">
                         <div className="flex gap-2">
@@ -42,7 +43,7 @@ const Card = ({
                             {type === "skills" ? (
                                 // Render icon for skills
                                 <div className="w-max xl:w-[300px] h-full relative flex items-center justify-center">
-                                    <div className="text-5xl text-primary/90">{icon}</div>
+                                    <div className="text-5xl text-accent">{icon}</div>
                                 </div>
                             ) : (
                                 // Render the logo for experience and education
@@ -76,6 +77,29 @@ const Card = ({
             </div>
         </div>
     );
+};
+
+Card.propTypes = {
+    type: PropTypes.oneOf(['experience', 'education', 'skills']).isRequired,
+    logoUrl: PropTypes.string,
+    position: PropTypes.string,
+    duration: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    company: PropTypes.string,
+    institution: PropTypes.string,
+    qualification: PropTypes.string,
+    name: PropTypes.string,
+    icon: PropTypes.node,
+};
+
+Card.defaultProps = {
+    logoUrl: '',
+    position: '',
+    company: '',
+    institution: '',
+    qualification: '',
+    name: '',
+    icon: null,
 };
 
 export default Card;

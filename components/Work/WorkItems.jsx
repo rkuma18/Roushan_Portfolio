@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FiArrowRight } from 'react-icons/fi';
 import { Badge } from '../ui/badge';
+import PropTypes from 'prop-types';
 
 const WorkItem = ({ href, category, img, title }) => {
     return (
@@ -10,25 +11,31 @@ const WorkItem = ({ href, category, img, title }) => {
                 <Badge className="bg-primary text-base z-40 absolute top-6 left-6 capitalize">
                     {category}
                 </Badge>
-                <Image 
-                    src={img} 
-                    fill 
-                    priority 
-                    quality={100} 
-                    className="object-cover group-hover:scale-105 transition-all duration-500" 
-                    alt={title || "Project image"} 
+                <Image
+                    src={img}
+                    fill
+                    quality={100}
+                    className="object-cover group-hover:scale-105 transition-all duration-500"
+                    alt={title || "Project image"}
                 />
             </div>
             <div className="flex items-center justify-center">
                 <div className="flex-1">
                     <h3 className="h3">{title}</h3>
                 </div>
-                <button className="bg-accent text-white rounded-full w-[48px] h-[48px] flex items-center justify-center -rotate-45 group-hover:rotate-0 transition-all duration-500">
+                <button className="bg-accent text-white rounded-full w-[48px] h-[48px] flex items-center justify-center -rotate-45 group-hover:rotate-0 transition-all duration-500" aria-label={`View ${title} project details`}>
                     <FiArrowRight className="text-2xl" />
                 </button>
             </div>
         </Link>
     );
+};
+
+WorkItem.propTypes = {
+    href: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+    img: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
 };
 
 export default WorkItem;

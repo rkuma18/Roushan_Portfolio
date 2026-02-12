@@ -1,6 +1,6 @@
 "use client";
 import { animate, motion } from "framer-motion";
-import React from "react";
+import PropTypes from 'prop-types';
 
 const RotatingShape = ({ content, direction, duration }) => {
     // define the rotation animation
@@ -21,6 +21,12 @@ const RotatingShape = ({ content, direction, duration }) => {
             {content}
         </motion.div>
     );
+};
+
+RotatingShape.propTypes = {
+    content: PropTypes.node.isRequired,
+    direction: PropTypes.oneOf(['left', 'right']).isRequired,
+    duration: PropTypes.number.isRequired,
 };
 
 export default RotatingShape;

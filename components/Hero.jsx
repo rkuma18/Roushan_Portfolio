@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { Link as ScrollLink } from "react-scroll";
+import { FiDownload } from "react-icons/fi";
 
 // components
 import RotatingShape from "./RotatingShape";
@@ -10,35 +11,50 @@ import Stats from "./Stats/Stats";
 
 const Hero = () => {
     return (
-        <section className="h-[800px] relative bg-accent/10 xl:bg-white" id="home">
+        <section className="h-[800px] relative bg-gradient-to-r from-gray-50 via-blue-50 to-indigo-50 overflow-hidden" id="home">
             {/* header */}
             <Header />
-            <div className="container mx-auto h-full">
-                <div className="relative z-20 h-full w-full xl:max-w-[768px] flex flex-col items-center xl:items-start justify-center text-center xl:text-left pt-10">
-                    <h1 className="h1 mb-2 max-w-[320px] xl:max-w-none">
-                        <span className="text-accent">I deliver value</span> through{" "}
-                        <TypeAnimation 
-                            preRenderFirstString={true} 
-                            sequence={["Data Science", 2000, "Artificial Intelligence", 2000]}
-                            speed={50}
-                            repeat={Infinity}
-                            wrapper="span"
-                            cursor={false}
-                            className="ml-2 xl:ml-4"
-                        />
-                    </h1>
-                    <p className="lead max-w-[476px] mb-7">
-                    Create smart, customized solutions that fuse data science with intelligence.
-                    </p>
-                    <ScrollLink to="contact" smooth>
-                        <button className="btn btn-accent mb-8">Contact me</button>
-                    </ScrollLink>
-                    {/* stats */}
-                    <Stats />
+            {/* hero content - full width grid layout */}
+            <div className="h-full xl:grid xl:grid-cols-2">
+                {/* left column - text content */}
+                <div className="h-full flex items-center justify-center xl:justify-start xl:pl-32">
+                    <div className="relative z-20 w-full max-w-[680px] flex flex-col items-center xl:items-start text-center xl:text-left pt-10 px-4 xl:px-0">
+                        <h1 className="h1 mb-4 max-w-[320px] xl:max-w-full leading-tight xl:leading-none">
+                            <span className="text-accent">I deliver value</span> through{" "}
+                            <TypeAnimation
+                                preRenderFirstString={true}
+                                sequence={["Data Science", 2000, "Artificial Intelligence", 2000]}
+                                speed={50}
+                                repeat={Infinity}
+                                wrapper="span"
+                                cursor={false}
+                                className="ml-2 xl:ml-4"
+                            />
+                        </h1>
+                        <p className="lead max-w-[476px] mb-7">
+                        Building smart AI solutions that help businesses grow and make better decisions.
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                            <ScrollLink to="contact" smooth>
+                                <button className="btn btn-accent">Contact me</button>
+                            </ScrollLink>
+                            <a
+                                href="/Roushan_Kumar_CV.pdf"
+                                download="Roushan_Kumar_CV.pdf"
+                                className="btn border border-accent text-accent hover:bg-accent hover:text-white transition-all duration-300 flex items-center justify-center gap-2"
+                            >
+                                <FiDownload className="text-xl" />
+                                Download CV
+                            </a>
+                        </div>
+                        {/* stats */}
+                        <Stats />
+                    </div>
                 </div>
-                {/* image */}
-                <div className="hidden xl:flex w-[55vw] h-[800px] absolute top-0 right-0 bg-accent">
-                    <div className="absolute w-[558px] h-[642px] bottom-0 z-40 left-[6.5vw]">
+
+                {/* right column - image */}
+                <div className="hidden xl:flex relative bg-accent h-full items-end justify-start pl-16">
+                    <div className="relative w-[558px] h-[642px] z-40">
                         <Image 
                             src="/assets/hero/dev.png" 
                             fill 
@@ -49,9 +65,9 @@ const Hero = () => {
                         />
                     </div>
                     {/* arrow shape */}
-                    <div 
-                        className="hidden xl:flex absolute top-48 left-[4vw]" 
-                        data-scroll 
+                    <div
+                        className="hidden xl:flex absolute top-48 left-8"
+                        data-scroll
                         data-scroll-speed="0.05"
                     >
                         <Image 
@@ -62,9 +78,9 @@ const Hero = () => {
                         />
                     </div>
                     {/* shape 1 */}
-                    <div 
-                        className="absolute top-[600px] left-[3vw]"
-                        data-scroll 
+                    <div
+                        className="absolute top-[600px] left-4"
+                        data-scroll
                         data-scroll-speed="0.02"
                     >
                         <RotatingShape 
@@ -81,9 +97,9 @@ const Hero = () => {
                         />
                     </div>
                     {/* shape 2 */}
-                    <div 
-                        className="absolute top-[240px] xl:left-[30vw]" 
-                        data-scroll 
+                    <div
+                        className="absolute top-[240px] right-[30%]"
+                        data-scroll
                         data-scroll-speed="0.01"
                     >
                         <RotatingShape 
@@ -100,9 +116,9 @@ const Hero = () => {
                         />
                     </div>
                     {/* shape 3 */}
-                    <div 
-                        className="absolute top-[480px] xl:left-[40vw]"
-                        data-scroll 
+                    <div
+                        className="absolute top-[480px] right-[20%]"
+                        data-scroll
                         data-scroll-speed="0.08"
                     >
                         <RotatingShape 
