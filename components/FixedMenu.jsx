@@ -53,20 +53,35 @@ const FixedMenu = () => {
     if (!isMounted) return null;
 
     return (
-        <div className="fixed w-full h-[400px] z-50 flex justify-center pointer-events-none bg-transparent">
-            {/* menu */}
+        <>
+            {/* Backdrop overlay */}
             <AnimatePresence>
-                {
-                    showMenu && showMenuButton && (
-                        <motion.div
-                        initial={{opacity: 0, y:20}}
-                        animate={{opacity:1 , y:0}}
-                        exit={{opacity: 0, y:20}}
-                        transition={{duration: 0.2}}
-                        role="dialog"
-                        aria-label="Navigation menu"
-                        className="relative w-full max-w-md md:max-w-none h-[400px] bottom-[28rem] xl:bottom-[21.2rem] px-4 pointer-events-auto">
-                            <div className="bg-white w-full h-full shadow-custom max-w-[1170px] mx-auto py-12 px-12 xl:px-32 flex items-center gap-12 rounded-lg">
+                {showMenu && showMenuButton && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
+                        onClick={() => setShowMenu(false)}
+                    />
+                )}
+            </AnimatePresence>
+
+            <div className="fixed w-full z-50 flex justify-center pointer-events-none">
+                {/* menu */}
+                <AnimatePresence>
+                    {
+                        showMenu && showMenuButton && (
+                            <motion.div
+                            initial={{opacity: 0, y:20}}
+                            animate={{opacity:1 , y:0}}
+                            exit={{opacity: 0, y:20}}
+                            transition={{duration: 0.2}}
+                            role="dialog"
+                            aria-label="Navigation menu"
+                            className="fixed top-20 md:top-32 left-0 right-0 mx-auto w-[90%] md:w-full max-w-md md:max-w-[1170px] px-4 pointer-events-auto">
+                                <div className="bg-white w-full shadow-custom mx-auto py-8 md:py-12 px-6 md:px-12 xl:px-32 flex items-center gap-12 rounded-lg">
                                 <Nav 
                                 containerStyles="md:border-r border-secondary/20 md:pr-12 w-full md:w-auto text-center md:text-left" 
                                 listStyles="flex flex-col justify-center gap-4" 
@@ -108,7 +123,7 @@ const FixedMenu = () => {
             {/* menu button */}
             {/* render button without animations on mobile */}
             {isMobile ? (
-                <div className="fixed z-50 bottom-16">
+                <div className="fixed z-50 bottom-8 right-8">
                     <button
                         onClick={()=> setShowMenu(!showMenu)}
                         className="bg-accent shadow-custom w-[54px] h-[54px] rounded-lg cursor-pointer flex items-center justify-center select-none pointer-events-auto"
@@ -143,7 +158,8 @@ const FixedMenu = () => {
                     )}
                 </AnimatePresence>
             )}
-        </div>
+            </div>
+        </>
     );
 };
 
