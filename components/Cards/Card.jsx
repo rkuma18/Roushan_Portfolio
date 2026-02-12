@@ -38,8 +38,8 @@ const Card = ({
                         </p>
                     </div>
                     
-                    <div className="flex-1 flex items-center justify-center xl:justify-start md:py-8 md:px-16">
-                        <div className="flex flex-col xl:flex-row items-center xl:items-start gap-4 text-center xl:text-left xl:gap-10 px-4 xl:px-0">
+                    <div className="flex-1 flex items-center justify-center xl:justify-start md:py-8 md:px-16 overflow-hidden">
+                        <div className="flex flex-col xl:flex-row items-center xl:items-start gap-4 text-center xl:text-left xl:gap-10 px-4 xl:px-0 w-full">
                             {type === "skills" ? (
                                 // Render icon for skills
                                 <div className="w-max xl:w-[300px] h-full relative flex items-center justify-center">
@@ -67,7 +67,7 @@ const Card = ({
                                         ? name 
                                         : null}
                                 </h3>
-                                <p className="text-base max-w-[660px]">
+                                <p className="text-base max-w-[660px] break-words leading-relaxed">
                                     {description}
                                 </p>
                             </div>
